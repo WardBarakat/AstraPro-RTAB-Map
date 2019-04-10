@@ -1,0 +1,26 @@
+<!-- Load processing nodelets for the RGB camera -->
+<launch>
+
+  <arg name="manager" />
+  <arg name="respawn" default="false" />
+  <arg name="rgb" />
+
+  <arg name="debayer_processing" default="true" />
+
+  <!-- TODO Arguments interpolation methods? -->
+
+  <arg     if="$(arg respawn)" name="bond" value="" />
+  <arg unless="$(arg respawn)" name="bond" value="--no-bond" />
+
+    <node name="rgb" pkg="usb_cam" ns="/camera" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video0" />
+    <param name="image_width" value="640" />
+    <param name="image_height" value="480" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="camera_frame_id" value="camera_rgb_optical_frame" />
+    <param name="io_method" value="mmap"/>
+  </node>
+  
+
+    <node name="image_proc" pkg="image_proc" type="image_proc" ns="/camera/rgb"/>
+</launch>
