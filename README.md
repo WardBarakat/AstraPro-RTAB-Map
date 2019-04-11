@@ -13,12 +13,14 @@ Custom Launch files for Orbbec Astra Pro to work with RTAB-Map
 
 6- catkin_make 
 
-7- read readme inside astra_pro_rtabmap you need to modify few launch files.
+7- sudo apt-get instsall ros-indigo-usb-cam 
 
-8- roslaunch astra_pro_rtabmap astrapro.launch
+8- read readme inside astra_pro_rtabmap you need to modify few launch files.
 
-9- refer to http://wiki.ros.org/rtabmap_ros/Tutorials/HandHeldMapping 
+9- roslaunch astra_pro_rtabmap astrapro.launch
 
-10- sudo apt-get install ros-indigo-rtabmap-ros or kinetic instead
+10- refer to http://wiki.ros.org/rtabmap_ros/Tutorials/HandHeldMapping 
 
-11- roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start" 
+11- sudo apt-get install ros-indigo-rtabmap-ros or kinetic instead
+
+12- roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start" 
